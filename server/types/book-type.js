@@ -4,7 +4,7 @@ import {
 
 import { authorType } from './author-type';
 
-import { authors } from '../database';
+import { getAuthorById } from '../database';
 
 export const bookType = new GraphQLObjectType({
 
@@ -17,9 +17,7 @@ export const bookType = new GraphQLObjectType({
     price: { type: GraphQLFloat },
     author: {
       type: authorType,
-      resolve: (bookObj) => {
-        return authors.find(a => a.id === bookObj.authorId);
-      },
+      resolve: ({ authorId }) => getAuthorById(authorId),
     },
   }),
 

@@ -140,63 +140,72 @@
       "id": 4,
       "title": "A Friend's Hope",
       "authorId": 1,
-      "category": "Inspirational",
+      "genre": "Inspirational",
+      "pageCount": 100,
       "price": 12.99
     },
     {
       "id": 5,
       "title": "Good Fellows",
       "authorId": 2,
-      "category": "Inspirational",
+      "genre": "Inspirational",
+      "pageCount": 100,
       "price": 4.99
     },
     {
       "title": "Forbidden Fellowship",
-      "category": "Romance",
+      "genre": "Romance",
       "price": 5,
       "authorId": 3,
+      "pageCount": 100,
       "id": 6
     },
     {
       "id": 8,
       "title": "Quiet Ones",
       "authorId": 2,
-      "category": "Mystery",
+      "genre": "Mystery",
+      "pageCount": 100,
       "price": 8.99
     },
     {
       "id": 9,
       "title": "Debating Silence",
       "authorId": 3,
-      "category": "Humor",
+      "genre": "Humor",
+      "pageCount": 100,
       "price": 7.99
     },
     {
       "id": 10,
       "title": "Midnight Killer",
       "authorId": 3,
-      "category": "Mystery",
+      "genre": "Mystery",
+      "pageCount": 100,
       "price": 10.99
     },
     {
       "title": "History of People",
-      "category": "Historical",
+      "genre": "Historical",
       "price": 1,
       "authorId": 2,
+      "pageCount": 100,
       "id": 15
     },
     {
       "title": "Lord of the Rings",
-      "category": "Inspirational",
+      "genre": "Inspirational",
       "price": 19,
       "authorId": 2,
+      "pageCount": 100,
       "id": 16
     },
     {
       "title": "Crazy People",
-      "category": "Humor",
+      "genre": "Humor",
       "price": 7.99,
       "authorId": 1,
+      "pageCount": 100,
       "id": 17
     }
   ]

@@ -4,7 +4,7 @@ import {
 
 import { bookType } from './book-type';
 
-import { books } from '../database';
+import { getBooksByAuthorId } from '../database';
 
 export const authorType = new GraphQLObjectType({
 
@@ -15,8 +15,8 @@ export const authorType = new GraphQLObjectType({
     lastName: { type: GraphQLString },
     books: {
       type: new GraphQLList(bookType),
-      resolve: (authorObj) => {
-        return books.filter(b => b.authorId === authorObj.id);
+      resolve: ({ id: authorId }) => {
+        return getBooksByAuthorId(authorId);
       }
     },
   }),

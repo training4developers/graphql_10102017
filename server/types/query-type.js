@@ -4,7 +4,7 @@ import { messageType } from './message-type';
 import { bookType } from './book-type';
 import { authorType } from './author-type';
 
-import { books, authors } from '../database';
+import { getAllBooks } from '../database';
 
 const messages = [
   { content: 'Internal Server Error', code: 500, level: 3 },
@@ -35,12 +35,12 @@ export const query = new GraphQLObjectType({
     },
     books: {
       type: new GraphQLList(bookType),
-      resolve: () => books,
+      resolve: () => getAllBooks(),
     },
-    authors: {
-      type: new GraphQLList(authorType),
-      resolve: () => authors,
-    }
+    // authors: {
+    //   type: new GraphQLList(authorType),
+    //   resolve: () => authors,
+    // }
   },
 
 });
