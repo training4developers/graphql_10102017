@@ -1,3 +1,11 @@
+Implement the functions needed to retrieve the data for CarMaker, Car,
+CarDealershipLocations, Managers from the REST Service.
+
+Use those functions within the Schema to load the data needed for the
+various types.
+
+
+
 
 CarMaker (only 3 car makers)
 Id
