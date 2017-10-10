@@ -117,7 +117,7 @@ From a terminal, in the root project folder (where the **package.json** file exi
 ### Useful Resources
 
 - [React](https://facebook.github.io/react/)
-- [MobX] (https://mobx.js.org/)
+- [MobX](https://mobx.js.org/)
 - [Redux](http://redux.js.org/)
 - [GraphQL](http://graphql.org/)
 - [Relay](https://facebook.github.io/relay/)
