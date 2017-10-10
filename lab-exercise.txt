@@ -1,0 +1,27 @@
+
+CarMaker (only 3 car makers)
+Id
+Name
+Location (HQ)
+CEO/President
+
+Car (only 5 cars) (query directly)
+Id
+CarMakerId
+CarDealershipLocationId
+ModelName
+Year
+Color
+Price
+
+CarDealershipLocations (3 locations)
+Name
+City
+State
+ManagerId
+
+Managers (2 managers)
+Id
+FirstName
+LastName
+
