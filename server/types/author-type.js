@@ -3,6 +3,7 @@ import {
 } from 'graphql';
 
 import { bookType } from './book-type';
+import { personInterfaceType } from './person-interface-type';
 
 import { getBooksByAuthorId } from '../database';
 
@@ -20,5 +21,6 @@ export const authorType = new GraphQLObjectType({
       }
     },
   }),
+  interfaces: [ personInterfaceType ]
 
 });

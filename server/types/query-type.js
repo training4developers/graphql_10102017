@@ -3,8 +3,8 @@ import { GraphQLObjectType, GraphQLList, GraphQLInt, GraphQLString } from 'graph
 import { messageType } from './message-type';
 import { bookType } from './book-type';
 import { authorType } from './author-type';
-
 import { personType } from './person-type';
+import { personInterfaceType } from './person-interface-type';
 
 import { getAllBooks, getAllAuthors } from '../database';
 
@@ -47,6 +47,24 @@ export const query = new GraphQLObjectType({
       type: new GraphQLList(authorType),
       resolve: () => getAllAuthors(),
     },
+    people2: {
+      type: new GraphQLList(personType),
+      resolve: () => ([
+        {id: 1, firstName: 'Bob', lastName: 'Smith', books: [] },
+        {id: 2, firstName: 'Jane', lastName: 'Smith', books: [] },
+        {id: 3, firstName: 'Tim', lastName: 'Hobbs', grade: 10 },
+        {id: 4, firstName: 'Jill', lastName: 'Hobbs', grade: 11 },
+      ]),
+    },
+    people: {
+      type: new GraphQLList(personInterfaceType),
+      resolve: () => ([
+        {id: 1, firstName: 'Bob', lastName: 'Smith', books: [] },
+        {id: 2, firstName: 'Jane', lastName: 'Smith', books: [] },
+        {id: 3, firstName: 'Tim', lastName: 'Hobbs', grade: 10 },
+        {id: 4, firstName: 'Jill', lastName: 'Hobbs', grade: 11 },
+      ]),
+    }
   },
 
 });

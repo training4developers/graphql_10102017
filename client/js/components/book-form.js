@@ -1,34 +1,16 @@
 import * as React from 'react';
-
-// Exercise
-
-// 1. Convert the List(String) type of genres to an enum
-
-// 2. Construct an introspection query to get the list of enum values from the GraphQL server
-
-// 3. Use the enum values to populate the drop down box on the form
-
-// query {
-//   __schema {
-//     types {
-//       name
-//     }
-//   }
-//   __type(name: "MessageLevelType") {
-//     name
-//     enumValues {
-//       name
-//       description
-//       deprecationReason
-//     }
-//   }
-// }
+import * as PropTypes from 'prop-types';
 
 export class BookForm extends React.Component {
 
   static fragments = {
     genres: `fragment BookFormGenres on Query {
-      genres
+      genres: __type(name: "GenreType") {
+        options: enumValues {
+          value: name
+          label: description
+        }
+      }
     }`,
     authors: `fragment BookFormAuthors on Query {
       authors {
@@ -49,17 +31,34 @@ export class BookForm extends React.Component {
       price: 0,
       authorId: 0,
     };
+
   }
 
   onChange = e => {
     this.setState({
-      [ e.target.name ]: (e.target.type === 'number' || e.target['data-type'] === 'number')
+      [ e.target.name ]: (e.target.type === 'number' || e.target.getAttribute('data-type') === 'number')
         ? Number(e.target.value) : e.target.value
     });
   }
 
   onClick = () => {
     console.log(this.state);
+    
+    this.props.onSaveBook(this.state);
+    
+    this.setState({
+      title: '',
+      genre: '',
+      pageCount: 0,
+      price: 0,
+      authorId: 0,
+    });
+  }
+
+  static propTypes = {
+    onSaveBook: PropTypes.func,
+    genres: PropTypes.array,
+    authors: PropTypes.array,
   }
 
   render() {
@@ -72,7 +71,8 @@ export class BookForm extends React.Component {
       <div>
         <label htmlFor="genre-select">Genre:</label>
         <select id="genre-select" name="genre" value={this.state.genre} onChange={this.onChange}>
-          {this.props.genres.map(genre => <option value={genre}>{genre}</option>)}
+          <option value="">Select One...</option>
+          {this.props.genres.map(genre => <option key={genre.value} value={genre.value}>{genre.label}</option>)}
         </select>
       </div>
       <div>
@@ -86,7 +86,8 @@ export class BookForm extends React.Component {
       <div>
         <label htmlFor="author-select">Author:</label>
         <select id="author-select" name="authorId" value={this.state.authorId} onChange={this.onChange} data-type="number">
-          {this.props.authors.map(author => <option value={author.id}>{author.lastName}, {author.firstName}</option>)}
+          <option value="">Select One...</option>
+          {this.props.authors.map(author => <option key={author.id} value={author.id}>{author.lastName}, {author.firstName}</option>)}
         </select>
       </div>
       <button type="button" onClick={this.onClick}>Add Book</button>

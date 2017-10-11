@@ -140,7 +140,7 @@
       "id": 4,
       "title": "A Friend's Hope",
       "authorId": 1,
-      "genre": "Inspirational",
+      "genre": 1,
       "pageCount": 100,
       "price": 12.99
     },
@@ -148,13 +148,13 @@
       "id": 5,
       "title": "Good Fellows",
       "authorId": 2,
-      "genre": "Inspirational",
+      "genre": 1,
       "pageCount": 100,
       "price": 4.99
     },
     {
       "title": "Forbidden Fellowship",
-      "genre": "Romance",
+      "genre": 1,
       "price": 5,
       "authorId": 3,
       "pageCount": 100,
@@ -164,7 +164,7 @@
       "id": 8,
       "title": "Quiet Ones",
       "authorId": 2,
-      "genre": "Mystery",
+      "genre": 1,
       "pageCount": 100,
       "price": 8.99
     },
@@ -172,7 +172,7 @@
       "id": 9,
       "title": "Debating Silence",
       "authorId": 3,
-      "genre": "Humor",
+      "genre": 1,
       "pageCount": 100,
       "price": 7.99
     },
@@ -180,13 +180,13 @@
       "id": 10,
       "title": "Midnight Killer",
       "authorId": 3,
-      "genre": "Mystery",
+      "genre": 1,
       "pageCount": 100,
       "price": 10.99
     },
     {
       "title": "History of People",
-      "genre": "Historical",
+      "genre": 1,
       "price": 1,
       "authorId": 2,
       "pageCount": 100,
@@ -194,7 +194,7 @@
     },
     {
       "title": "Lord of the Rings",
-      "genre": "Inspirational",
+      "genre": 1,
       "price": 19,
       "authorId": 2,
       "pageCount": 100,
@@ -202,7 +202,7 @@
     },
     {
       "title": "Crazy People",
-      "genre": "Humor",
+      "genre": 1,
       "price": 7.99,
       "authorId": 1,
       "pageCount": 100,
@@ -223,6 +223,30 @@
       "price": 12.31,
       "authorId": 3,
       "id": 19
+    },
+    {
+      "title": "",
+      "genre": 3,
+      "pageCount": 0,
+      "price": 0,
+      "authorId": 0,
+      "id": 20
+    },
+    {
+      "title": "a",
+      "genre": 2,
+      "pageCount": 3,
+      "price": 333,
+      "authorId": 2,
+      "id": 21
+    },
+    {
+      "title": "s",
+      "genre": 2,
+      "pageCount": 2,
+      "price": 0,
+      "authorId": 2,
+      "id": 22
     }
   ]
 }

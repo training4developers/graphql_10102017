@@ -39,6 +39,7 @@ export const mutation = new GraphQLObjectType({
       },
       type: bookType,
       resolve: (_, { book }) => {
+        console.dir(book);
         return insertBook(book);
       }
     },

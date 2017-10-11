@@ -2,18 +2,32 @@ import * as React from 'react';
 
 export class BookTable extends React.Component {
 
-  static fragment = `
-    fragment BookTable on BookType {
-      id
-      title
-      pages: pageCount
-      genre
-      author {
-        firstName
-        lastName
+  static fragments = {
+    books: `
+      fragment BookTableBooks on Query {
+        books {
+          id
+          title
+          pages: pageCount
+          genre
+          author {
+            firstName
+            lastName
+          }
+        }
       }
-    }
-  `;
+    `,
+    genres: `
+      fragment BookTableGenres on Query {
+        genres: __type(name: "GenreType") {
+          options: enumValues {
+            value: name
+            label: description
+          }
+        }
+      }
+    `
+  };
   
   render() {
 
@@ -32,7 +46,7 @@ export class BookTable extends React.Component {
           <td>{book.id}</td>
           <td>{book.title}</td>
           <td>{book.pages}</td>
-          <td>{book.genre}</td>
+          <td>{this.props.genres.find(g => g.value === book.genre).label}</td>
           <td>{book.author.firstName} {book.author.lastName}</td>
         </tr>)}
       </tbody>
