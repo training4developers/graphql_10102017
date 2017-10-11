@@ -2,7 +2,6 @@ import { GraphQLObjectType, GraphQLList, GraphQLInt } from 'graphql';
 
 import { messageType } from './message-type';
 import { bookType } from './book-type';
-import { authorType } from './author-type';
 
 import { getAllBooks } from '../database';
 

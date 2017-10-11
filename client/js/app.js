@@ -1,26 +1,30 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { HelloWorld } from './components/hello-world';
+import { BookTable } from './components/book-table';
 
-// {"query":"query {\n\tbooks {\n    id\n    title\n  }\n}\n","variables":null}
-
-const myFirstGraphQLQuery = {
-  query: "query { books { id title } }",
-  variables: null
+const getBooksGraphQL = {
+  query: `
+    query GetBooks {
+      books {
+        ...BookTable
+      }
+    }
+  
+    ${BookTable.fragment}
+  `,
+  variables: null,
+  operation: 'GetBooks',
 };
 
 fetch('http://localhost:3000/graphql', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(myFirstGraphQLQuery),
+  body: JSON.stringify(getBooksGraphQL),
 })
   .then(res => res.json())
-  .then(results => console.log(results));
+  .then(results => {
+    ReactDOM.render(<BookTable books={results.data.books} />, document.querySelector('main'));
+  });
 
-Instructions
 
-Create a fetch request to download some car data from the graphql server and
-display it in the console.
-
-ReactDOM.render(<HelloWorld />, document.querySelector('main'));
