@@ -207,6 +207,22 @@
       "authorId": 1,
       "pageCount": 100,
       "id": 17
+    },
+    {
+      "title": "New Book",
+      "genre": 1,
+      "pageCount": 100,
+      "price": 12.31,
+      "authorId": 3,
+      "id": 18
+    },
+    {
+      "title": "New Book 2",
+      "genre": 1,
+      "pageCount": 100,
+      "price": 12.31,
+      "authorId": 3,
+      "id": 19
     }
   ]
 }

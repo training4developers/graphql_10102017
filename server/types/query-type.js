@@ -4,6 +4,8 @@ import { messageType } from './message-type';
 import { bookType } from './book-type';
 import { authorType } from './author-type';
 
+import { personType } from './person-type';
+
 import { getAllBooks, getAllAuthors } from '../database';
 
 const messages = [
@@ -44,7 +46,7 @@ export const query = new GraphQLObjectType({
     authors: {
       type: new GraphQLList(authorType),
       resolve: () => getAllAuthors(),
-    }
+    },
   },
 
 });

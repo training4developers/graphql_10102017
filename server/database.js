@@ -27,3 +27,14 @@ export const getBooksByAuthorId = authorId => {
 export const getAuthorById = authorId => {
   return fetch(`http://localhost:3010/authors/${authorId}`).then(res => res.json());
 };
+
+export const insertBook = book => {
+
+  delete book.id;
+
+  return fetch('http://localhost:3010/books', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(book),
+  }).then(res => res.json());
+};
