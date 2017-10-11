@@ -1,0 +1,25 @@
+Instructions
+
+1. Create a new book form component.
+
+2. Book form component should collect the following data...
+
+Title: string
+Genre: drop down - should be populated from the GraphQL Server
+  Fiction, Non-Fiction, Reference, Magazines
+Page Count: number
+Price: number
+Author: drop down - should be populated from the GraphQL Server
+  We will save it by Author ID
+
+3. For implementing the form controls use controlled components
+
+4. When you click save, output the final collected book object to the console
+
+{
+  title: 'A new book',
+  genre: 'Fiction',
+  pageCount: 120,
+  price: 12.99,
+  authorId: 2
+}

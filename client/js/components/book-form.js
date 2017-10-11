@@ -8,6 +8,22 @@ import * as React from 'react';
 
 // 3. Use the enum values to populate the drop down box on the form
 
+// query {
+//   __schema {
+//     types {
+//       name
+//     }
+//   }
+//   __type(name: "MessageLevelType") {
+//     name
+//     enumValues {
+//       name
+//       description
+//       deprecationReason
+//     }
+//   }
+// }
+
 export class BookForm extends React.Component {
 
   static fragments = {
