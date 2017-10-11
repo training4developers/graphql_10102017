@@ -1,9 +1,10 @@
-import { GraphQLObjectType, GraphQLList, GraphQLInt } from 'graphql';
+import { GraphQLObjectType, GraphQLList, GraphQLInt, GraphQLString } from 'graphql';
 
 import { messageType } from './message-type';
 import { bookType } from './book-type';
+import { authorType } from './author-type';
 
-import { getAllBooks } from '../database';
+import { getAllBooks, getAllAuthors } from '../database';
 
 const messages = [
   { content: 'Internal Server Error', code: 500, level: 3 },
@@ -32,14 +33,18 @@ export const query = new GraphQLObjectType({
       },
       resolve: (_, args) => messages.find(m => m.code === args.code),
     },
+    genres: {
+      type: new GraphQLList(GraphQLString),
+      resolve: () => ([ 'Fiction', 'Non-Fiction', 'Reference', 'Magazines' ])
+    },
     books: {
       type: new GraphQLList(bookType),
       resolve: () => getAllBooks(),
     },
-    // authors: {
-    //   type: new GraphQLList(authorType),
-    //   resolve: () => authors,
-    // }
+    authors: {
+      type: new GraphQLList(authorType),
+      resolve: () => getAllAuthors(),
+    }
   },
 
 });

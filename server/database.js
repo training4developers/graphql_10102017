@@ -15,6 +15,9 @@ import fetch from 'node-fetch';
 export const getAllBooks = () => fetch('http://localhost:3010/books')
   .then(res => res.json());
 
+export const getAllAuthors = () => fetch('http://localhost:3000/api/authors')
+  .then(res => res.json());
+
 export const getBooksByAuthorId = authorId => {
   return fetch('http://localhost:3010/books')
     .then(res => res.json())
