@@ -1,5 +1,13 @@
 import * as React from 'react';
 
+// Exercise
+
+// 1. Convert the List(String) type of genres to an enum
+
+// 2. Construct an introspection query to get the list of enum values from the GraphQL server
+
+// 3. Use the enum values to populate the drop down box on the form
+
 export class BookForm extends React.Component {
 
   static fragments = {
